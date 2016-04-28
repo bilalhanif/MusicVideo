@@ -9,11 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     var videos = [Videos]()
+    
+    @IBOutlet weak var displayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityStatusChanged), name: "ReachStatusChanged", object: nil)
+        
+        reachabilityStatusChanged()
         
         //call api
         let api = APIManager()
@@ -34,16 +40,16 @@ class ViewController: UIViewController {
             print("\(index) name = \(item.vName)")
         }
         
-//        let alert = UIAlertController(title: (result), message: nil, preferredStyle: .Alert)
-//        
-//        let okAction = UIAlertAction(title: "OK", style: .Default) {
-//            action -> Void in
-//            
-//            //code
-//        }
-//        
-//        alert.addAction(okAction)
-//        self.presentViewController(alert, animated: true, completion:  nil)
+        //        let alert = UIAlertController(title: (result), message: nil, preferredStyle: .Alert)
+        //
+        //        let okAction = UIAlertAction(title: "OK", style: .Default) {
+        //            action -> Void in
+        //
+        //            //code
+        //        }
+        //
+        //        alert.addAction(okAction)
+        //        self.presentViewController(alert, animated: true, completion:  nil)
         
         //print(result)
         
@@ -51,10 +57,26 @@ class ViewController: UIViewController {
         
     }
     
-//    func myTest() {
-//        for item in videos {
-//            print("MytestName = \(item.vName)")
-//        }
-//    }
+    func reachabilityStatusChanged() {
+        switch reachabilityStatus {
+        case NOACCESS: view.backgroundColor = UIColor.redColor()
+        displayLabel.text = "No Internet"
+        case WIFI: view.backgroundColor = UIColor.greenColor()
+        displayLabel.text = "Reachable with WIFI"
+        case WWAN: view.backgroundColor = UIColor.yellowColor()
+        displayLabel.text = "Reachable with Cellular"
+        default: return
+        }
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReachStatusChanged", object: nil)
+    }
+    
+    //    func myTest() {
+    //        for item in videos {
+    //            print("MytestName = \(item.vName)")
+    //        }
+    //    }
 }
 
