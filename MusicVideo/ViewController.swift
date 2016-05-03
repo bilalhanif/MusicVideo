@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var videos = [Videos]()
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var displayLabel: UILabel!
     
     override func viewDidLoad() {
@@ -28,6 +29,9 @@ class ViewController: UIViewController {
     
     func didLoadData(videos: [Videos]) {
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         print(reachabilityStatus)
         
         self.videos = videos
@@ -39,6 +43,8 @@ class ViewController: UIViewController {
         for (index, item) in videos.enumerate() {
             print("\(index) name = \(item.vName)")
         }
+        
+        tableView.reloadData()
         
         //        let alert = UIAlertController(title: (result), message: nil, preferredStyle: .Alert)
         //
@@ -78,5 +84,23 @@ class ViewController: UIViewController {
     //            print("MytestName = \(item.vName)")
     //        }
     //    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let video = videos[indexPath.row]
+        
+        cell.textLabel?.text = ("\(indexPath.row + 1)")
+        cell.detailTextLabel?.text = video.vName
+        
+        return cell
+    }
 }
 
