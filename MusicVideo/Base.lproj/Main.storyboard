@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Music VideoTVC-->
@@ -11,52 +10,34 @@
             <objects>
                 <tableViewController id="r45-A2-0qA" customClass="MusicVideoTVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rub-xg-cbT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="132" id="RLJ-Xl-sQ4" customClass="MusicVideoTableViewCell" customModule="MusicVideo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="132"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RLJ-Xl-sQ4" id="Dyx-Dz-3gI">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="132"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="131.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xqk-Rk-coQ">
-                                            <rect key="frame" x="13" y="9" width="182" height="115"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="182" id="AZn-Pa-u4f"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-KJ-I7y">
-                                            <rect key="frame" x="211" y="26" width="78" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="bco-fK-h0H"/>
-                                                <constraint firstAttribute="width" constant="78" id="syr-MV-i6R"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-KJ-I7y">
+                                            <rect key="frame" x="168" y="14" width="238" height="27"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="musicTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAt-dH-qR0">
-                                            <rect key="frame" x="211" y="64" width="351" height="54"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="musicTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAt-dH-qR0">
+                                            <rect key="frame" x="168" y="62" width="238" height="54"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqk-Rk-coQ">
+                                            <rect key="frame" x="13" y="8" width="138" height="115"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstItem="BAt-dH-qR0" firstAttribute="top" secondItem="CbF-KJ-I7y" secondAttribute="bottom" constant="17" id="1kh-gh-F6L"/>
-                                        <constraint firstItem="CbF-KJ-I7y" firstAttribute="leading" secondItem="Xqk-Rk-coQ" secondAttribute="trailing" constant="16" id="8hA-a0-uBM"/>
-                                        <constraint firstItem="Xqk-Rk-coQ" firstAttribute="leading" secondItem="Dyx-Dz-3gI" secondAttribute="leadingMargin" constant="5" id="ADs-Ew-B9M"/>
-                                        <constraint firstItem="Xqk-Rk-coQ" firstAttribute="top" secondItem="Dyx-Dz-3gI" secondAttribute="topMargin" constant="1" id="TtZ-C6-slJ"/>
-                                        <constraint firstItem="CbF-KJ-I7y" firstAttribute="top" secondItem="Dyx-Dz-3gI" secondAttribute="topMargin" constant="18" id="YcL-ad-hEo"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="BAt-dH-qR0" secondAttribute="bottom" constant="5.5" id="ZXG-bh-peP"/>
-                                        <constraint firstItem="Xqk-Rk-coQ" firstAttribute="centerY" secondItem="Dyx-Dz-3gI" secondAttribute="centerY" id="c8h-Dk-CZh"/>
-                                        <constraint firstItem="CbF-KJ-I7y" firstAttribute="leading" secondItem="BAt-dH-qR0" secondAttribute="leading" id="gqs-U2-AAo"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="BAt-dH-qR0" secondAttribute="trailing" constant="30" id="rkC-yA-bUx"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="musicImage" destination="Xqk-Rk-coQ" id="zbc-GO-vCe"/>
@@ -72,10 +53,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="eac-ym-Pgt"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCw-op-glo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="469"/>
+            <point key="canvasLocation" x="812" y="404"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R6s-6l-p0M">
