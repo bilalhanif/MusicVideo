@@ -43,7 +43,7 @@ class MusicVideoDetailVC: UIViewController {
         }
     }
     
-    func preferredFontChange() {
+    func preferredFontChange() { 
         print("preferred font change")
         
         vName.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
