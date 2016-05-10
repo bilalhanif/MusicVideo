@@ -24,7 +24,7 @@ class MusicVideoTableViewCell: UITableViewCell {
     
     func updateCell() {
         
-        //print(video?.vName)
+        //print(video?.vPrice)
         
         musicTitle.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         rank.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
