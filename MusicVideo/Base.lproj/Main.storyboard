@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="817" y="329"/>
         </scene>
-        <!--Table View Controller-->
+        <!--SettingTVC-->
         <scene sceneID="2XV-gu-zSv">
             <objects>
-                <tableViewController id="vGY-Mq-1c8" sceneMemberID="viewController">
+                <tableViewController id="vGY-Mq-1c8" customClass="SettingTVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cyo-B4-PfE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +234,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BBs-Mh-irD">
-                                                    <rect key="frame" x="46" y="22" width="509" height="31"/>
+                                                    <rect key="frame" x="46" y="23" width="509" height="31"/>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -252,10 +252,19 @@
                             <outlet property="delegate" destination="vGY-Mq-1c8" id="oqN-Tx-0e0"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="APICnt" destination="dJV-Gh-ZhJ" id="mjH-R4-uBQ"/>
+                        <outlet property="aboutDisplay" destination="gdF-Ku-X8R" id="cbI-qn-skD"/>
+                        <outlet property="bestImageDisplay" destination="GqC-oA-nns" id="ArV-HN-t0x"/>
+                        <outlet property="feedBackDisplay" destination="vWV-RY-DMb" id="0Kf-GX-WpW"/>
+                        <outlet property="securityDisplay" destination="Dgs-sp-xjH" id="nys-Lf-HBc"/>
+                        <outlet property="sliderCnt" destination="BBs-Mh-irD" id="uIY-Yn-rIU"/>
+                        <outlet property="touchID" destination="Qcl-nT-cYz" id="2CS-hB-hOh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMm-iJ-Cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817" y="1079"/>
+            <point key="canvasLocation" x="1106" y="1082"/>
         </scene>
         <!--Music Video DetailVC-->
         <scene sceneID="5OW-C8-oFd">
