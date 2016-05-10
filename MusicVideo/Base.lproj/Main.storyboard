@@ -155,6 +155,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qcl-nT-cYz">
                                                     <rect key="frame" x="535" y="22" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="touchIdSec:" destination="vGY-Mq-1c8" eventType="valueChanged" id="xPs-UT-BXH"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgs-sp-xjH">
                                                     <rect key="frame" x="8" y="27" width="101" height="21"/>
@@ -264,7 +267,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMm-iJ-Cxr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1106" y="1082"/>
+            <point key="canvasLocation" x="1000" y="1069"/>
         </scene>
         <!--Music Video DetailVC-->
         <scene sceneID="5OW-C8-oFd">
