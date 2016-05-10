@@ -137,8 +137,12 @@
                             <constraint firstItem="el3-SS-c1h" firstAttribute="centerX" secondItem="fzj-p0-a06" secondAttribute="centerX" id="4ud-2j-3E7"/>
                             <constraint firstItem="KF8-he-u7S" firstAttribute="leading" secondItem="fzj-p0-a06" secondAttribute="leadingMargin" id="5mG-qh-IAR"/>
                             <constraint firstItem="el3-SS-c1h" firstAttribute="centerX" secondItem="6TC-fT-4ou" secondAttribute="centerX" id="8cM-jd-DOe"/>
+                            <constraint firstAttribute="trailing" secondItem="6TC-fT-4ou" secondAttribute="trailing" id="ABO-3g-Feh"/>
                             <constraint firstItem="KF8-he-u7S" firstAttribute="firstBaseline" secondItem="4O5-ZW-8Al" secondAttribute="firstBaseline" id="Ayj-7c-5CL"/>
+                            <constraint firstItem="6TC-fT-4ou" firstAttribute="leading" secondItem="fzj-p0-a06" secondAttribute="leading" id="Epi-px-iOq"/>
+                            <constraint firstItem="6TC-fT-4ou" firstAttribute="bottom" secondItem="onL-Ns-KLT" secondAttribute="top" id="Evm-Xg-9fX"/>
                             <constraint firstItem="KF8-he-u7S" firstAttribute="centerY" secondItem="4O5-ZW-8Al" secondAttribute="centerY" id="HUf-so-lDp"/>
+                            <constraint firstItem="6TC-fT-4ou" firstAttribute="top" secondItem="koX-Wp-tMb" secondAttribute="bottom" id="Joa-yr-ai4"/>
                             <constraint firstItem="el3-SS-c1h" firstAttribute="top" secondItem="koX-Wp-tMb" secondAttribute="bottom" id="MpA-0r-TYw"/>
                             <constraint firstItem="6TC-fT-4ou" firstAttribute="trailing" secondItem="qFY-C5-nXR" secondAttribute="trailing" id="SaG-NW-shl"/>
                             <constraint firstItem="qFY-C5-nXR" firstAttribute="bottom" secondItem="onL-Ns-KLT" secondAttribute="top" id="VNq-yq-ECZ"/>
@@ -150,6 +154,44 @@
                             <constraint firstItem="KF8-he-u7S" firstAttribute="top" secondItem="6TC-fT-4ou" secondAttribute="bottom" constant="2" id="nn1-x8-C93"/>
                             <constraint firstItem="4O5-ZW-8Al" firstAttribute="trailing" secondItem="fzj-p0-a06" secondAttribute="trailingMargin" id="zN2-wp-Wdl"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ABO-3g-Feh"/>
+                                <exclude reference="Epi-px-iOq"/>
+                                <exclude reference="Evm-Xg-9fX"/>
+                                <exclude reference="Joa-yr-ai4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="6TC-fT-4ou"/>
+                                <exclude reference="el3-SS-c1h"/>
+                                <exclude reference="KF8-he-u7S"/>
+                                <exclude reference="4O5-ZW-8Al"/>
+                                <exclude reference="qFY-C5-nXR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4ud-2j-3E7"/>
+                                <exclude reference="8cM-jd-DOe"/>
+                                <exclude reference="MpA-0r-TYw"/>
+                                <exclude reference="auE-CT-P6E"/>
+                                <exclude reference="5mG-qh-IAR"/>
+                                <exclude reference="Ayj-7c-5CL"/>
+                                <exclude reference="HUf-so-lDp"/>
+                                <exclude reference="nn1-x8-C93"/>
+                                <exclude reference="zN2-wp-Wdl"/>
+                                <exclude reference="VNq-yq-ECZ"/>
+                                <exclude reference="jCV-or-Yp6"/>
+                                <include reference="ABO-3g-Feh"/>
+                                <include reference="Epi-px-iOq"/>
+                                <include reference="Evm-Xg-9fX"/>
+                                <include reference="Joa-yr-ai4"/>
+                                <exclude reference="SaG-NW-shl"/>
+                                <exclude reference="hPO-Rg-UEe"/>
+                                <exclude reference="hak-xA-AxV"/>
+                                <exclude reference="hoa-ve-8sR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems>
                         <barButtonItem systemItem="play" id="B9O-9L-a8e">
@@ -170,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHn-nE-BDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="1100"/>
+            <point key="canvasLocation" x="1047" y="1083"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R6s-6l-p0M">
