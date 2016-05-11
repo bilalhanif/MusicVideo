@@ -24,6 +24,10 @@ class SettingTVC: UITableViewController {
     
     @IBOutlet weak var sliderCnt: UISlider!
     
+    @IBOutlet weak var labelCnt: UILabel!
+    
+    @IBOutlet weak var labelSlider: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +43,10 @@ class SettingTVC: UITableViewController {
             let theValue = NSUserDefaults.standardUserDefaults().objectForKey("APICNT") as! Int
             APICnt.text = "\(theValue)"
             sliderCnt.value = Float(theValue)
+        }
+        else {
+            sliderCnt.value = 10.0
+            APICnt.text = ("\(Int(sliderCnt.value))")
         }
     }
     
@@ -67,6 +75,8 @@ class SettingTVC: UITableViewController {
         securityDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         bestImageDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         APICnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        labelCnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        labelSlider.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
     }
     
     deinit {
