@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingTVC: UITableViewController {
+class SettingTVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var aboutDisplay: UILabel!
     
@@ -78,6 +79,61 @@ class SettingTVC: UITableViewController {
         labelCnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         labelSlider.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let mailComposeViewController = configureMail()
+            
+            if MFMailComposeViewController.canSendMail() {
+                self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+            }
+            else {
+                mailAlert()
+            }
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+    
+    func configureMail() -> MFMailComposeViewController {
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["bilal@yahoo.com"])
+        mailComposeVC.setSubject("Music Video App Feedback")
+        mailComposeVC.setMessageBody("Hi Bilal, \n\nI would like to share the following feedback...\n", isHTML: false)
+        return mailComposeVC
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail Cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail Saved")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail Sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail Faild")
+        default:
+            print("Unknow Issue")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func mailAlert() {
+        let alertController: UIAlertController = UIAlertController(title: "Alert", message: "No e-Mail Account setup for Phone", preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
+            //do something
+        }
+        
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
